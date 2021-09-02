@@ -1,0 +1,44 @@
+html
+    head
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")        
+        title='Alta de Productos'
+    body    
+        div(class="m-5 pb-5 bg-light")
+            h2.text-primary= 'Ingrese Producto'
+            br
+            form        
+                label.strong.em= 'Nombre'
+                br
+                input(type="text" id="title" name="title" placeholder="Calculadora")
+                br
+                label.strong.em= 'Precio'
+                br
+                input(type="number" id="price" name="price" placeholder="$25")
+                br
+                label.strong.em= 'URL Foto'
+                br
+                input(type="text" id="thumbnail" name="thumbnail" placeholder="https://www.iconfinder.com")
+                br
+                br
+                button(class="btn btn-success" onclick="sendData(this)")="Enviar"
+                br
+                br
+                table(class="table table-dark" id="messages")     
+        div(class="m-5 pb-5 bg-light")
+            h2.text-primary= 'Centro de Mensajes'
+            br
+            form(id="chat-form")                                
+                input(type="email" class="form-control" id="mail" name="email" size="10" placeholder="diego@Outlook.com")
+                hr
+                div(class="chat-messages")
+                br
+                div
+                    input(type="text" id="texto" name="texto" placeholder="Ingresa un mensaje...")
+                    button(class="btn btn-primary" )="Enviar!"
+        script(src="/socket.io/socket.io.js")
+        script(src="main.js")
+        script(src="js/main.js")
